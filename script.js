@@ -26,27 +26,40 @@ function adicionarTarefa() {
     const tarefa = inputTarefa.value.trim();
 
     if (tarefa === "") {
-        
         exibirMensagem("Tarefa vazia!", "danger");
         return;
     }
 
-    
+    // Criar elemento <li> com Bootstrap
     const li = document.createElement("li");
-    li.className = "list-group-item";
-    li.textContent = tarefa;
+    li.className = "list-group-item d-flex justify-content-between align-items-center";
+
+    
+    const span = document.createElement("span");
+    span.textContent = tarefa;
+    li.appendChild(span);
+
+    
+    const btnRemover = document.createElement("button");
+    btnRemover.className = "btn btn-sm btn-danger";
+    btnRemover.textContent = "Remover";
+    li.appendChild(btnRemover);
+
+    
+    btnRemover.addEventListener("click", function() {
+        li.remove();
+        exibirMensagem("Tarefa removida!", "warning");
+    });
 
     
     listaTarefas.appendChild(li);
 
     
     inputTarefa.value = "";
+    inputTarefa.focus();
 
     
     exibirMensagem("Tarefa adicionada com sucesso!", "success");
-
-    
-    inputTarefa.focus();
 }
 
 
