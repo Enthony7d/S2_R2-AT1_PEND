@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Define o conjunto de caracteres -->
     <meta charset="UTF-8">
+
+    <!-- Responsividade para dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
     <title>Saudação Personalizada</title>
+
     <style>
+        /* Estilo geral da página */
         body {
-            font-family: Arial, sans-serif;
-            background: #f0f8ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            font-family: Arial, sans-serif; /* Fonte padrão */
+            background: #f0f8ff; /* Cor de fundo */
+            display: flex; /* Ativa flexbox */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh; /* Altura total da tela */
+            margin: 0; /* Remove margens */
         }
+
+        /* Caixa principal */
         .container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            text-align: center;
+            background: #ffffff; /* Fundo branco */
+            padding: 30px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Sombra */
+            text-align: center; /* Centraliza texto */
         }
+
+        /* Campo de input */
         input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 200px;
+            padding: 10px; /* Espaçamento interno */
+            font-size: 16px; /* Tamanho da fonte */
+            border-radius: 5px; /* Bordas arredondadas */
+            border: 1px solid #ccc; /* Borda cinza */
+            width: 200px; /* Largura fixa */
         }
+
+        /* Botão */
         button {
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 5px;
             border: none;
-            background-color: #0077cc;
-            color: #fff;
-            cursor: pointer;
-            margin-left: 10px;
+            background-color: #0077cc; /* Cor azul */
+            color: #fff; /* Texto branco */
+            cursor: pointer; /* Cursor de clique */
+            margin-left: 10px; /* Espaço à esquerda */
         }
+
+        /* Efeito ao passar o mouse no botão */
         button:hover {
-            background-color: #005fa3;
+            background-color: #005fa3; /* Azul mais escuro */
         }
+
+        /* Área onde a mensagem aparecerá */
         #mensagem {
             margin-top: 20px;
             font-size: 18px;
@@ -48,14 +65,23 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
+        <!-- Título -->
         <h2>Digite seu nome:</h2>
+
+        <!-- Campo para digitar o nome -->
         <input type="text" id="nome" placeholder="Seu nome aqui">
+
+        <!-- Botão para enviar -->
         <button id="botao">Enviar</button>
+
+        <!-- Onde a mensagem será exibida -->
         <div id="mensagem"></div>
     </div>
 
+    
     <script src="script.js"></script>
 </body>
 </html>
