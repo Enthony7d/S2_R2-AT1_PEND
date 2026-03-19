@@ -6,33 +6,34 @@ const mensagem = document.getElementById("mensagem");
 
 // Função para exibir mensagens Bootstrap
 function exibirMensagem(texto, tipo) {
-    mensagem.innerHTML = "";
+    mensagem.innerHTML = ""; // limpa mensagens
 
-    const alerta = document.createElement("div");
-    alerta.className = `alert alert-${tipo} alert-dismissible fade show`;
+    const alerta = document.createElement("div"); // cria div
+    alerta.className = `alert alert-${tipo} alert-dismissible fade show`; // classes
     alerta.setAttribute("role", "alert");
+
     alerta.innerHTML = `
         ${texto}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     `;
 
-    mensagem.appendChild(alerta);
+    mensagem.appendChild(alerta); // adiciona na tela
 }
 
 // Função para adicionar tarefa
 function adicionarTarefa() {
-    const tarefa = inputTarefa.value.trim();
+    const tarefa = inputTarefa.value.trim(); // pega valor
 
     if (tarefa === "") {
-        exibirMensagem("Tarefa vazia!", "danger");
+        exibirMensagem("Tarefa vazia!", "danger"); // erro
         return;
     }
 
-    // Criar <li> com Bootstrap e estilo flex
+    // Cria item da lista
     const li = document.createElement("li");
     li.className = "list-group-item d-flex justify-content-between align-items-center";
 
-    // Div para organizar checkbox + texto
+    // Div com checkbox e texto
     const divTexto = document.createElement("div");
     divTexto.className = "form-check";
 
@@ -41,14 +42,13 @@ function adicionarTarefa() {
     checkbox.type = "checkbox";
     checkbox.className = "form-check-input me-2";
 
-    // Label do texto da tarefa
+    // Texto da tarefa
     const label = document.createElement("label");
     label.className = "form-check-label";
     label.textContent = tarefa;
 
     divTexto.appendChild(checkbox);
     divTexto.appendChild(label);
-
     li.appendChild(divTexto);
 
     // Botão remover
@@ -57,24 +57,24 @@ function adicionarTarefa() {
     btnRemover.textContent = "Remover";
     li.appendChild(btnRemover);
 
-    // Evento para marcar tarefa como concluída
+    // Marcar como concluída
     checkbox.addEventListener("change", function() {
         if (checkbox.checked) {
             label.style.textDecoration = "line-through";
-            label.style.color = "#6c757d"; // cinza
+            label.style.color = "#6c757d";
         } else {
             label.style.textDecoration = "none";
             label.style.color = "inherit";
         }
     });
 
-    // Evento para remover tarefa
+    // Remover tarefa
     btnRemover.addEventListener("click", function() {
         li.remove();
         exibirMensagem("Tarefa removida!", "warning");
     });
 
-    // Adiciona à lista
+    // Adiciona na lista
     listaTarefas.appendChild(li);
 
     // Limpa input e foca
@@ -85,11 +85,42 @@ function adicionarTarefa() {
     exibirMensagem("Tarefa adicionada com sucesso!", "success");
 }
 
-// Eventos
+// Evento de clique
 btnAdicionar.addEventListener("click", adicionarTarefa);
 
+// Evento de ENTER
 inputTarefa.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         adicionarTarefa();
     }
 });
+
+
+/*
+
+
+getElementById  seleciona elementos pelo id
+
+trim  remove espaços extras
+
+textContent  define texto
+
+innerHTML  insere HTML
+
+appendChild  adiciona elemento dentro de outro
+
+
+setAttribute  define atributos
+
+
+
+style  altera estilo (ex: riscado e cor)
+
+focus  coloca cursor no input
+
+event.key  identifica tecla pressionada
+
+
+
+
+*/
