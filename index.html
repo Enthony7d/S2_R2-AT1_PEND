@@ -1,76 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Lista Dinâmica</title>
+    <!-- Define o conjunto de caracteres -->
+    <meta charset="UTF-8">
 
-<style>
-    body{
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #4facfe, #00f2fe);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+    <!-- Título da página -->
+    <title>Lista Dinâmica</title>
 
-    .container{
-        background: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        width: 300px;
-        text-align: center;
-    }
+    <style>
+        /* Estilo geral da página */
+        body{
+            font-family: Arial, sans-serif; /* Fonte */
+            background: linear-gradient(135deg, #4facfe, #00f2fe); /* Fundo em degradê */
+            display: flex; /* Ativa flexbox */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh; /* Altura total da tela */
+        }
 
-    h2{
-        margin-bottom: 20px;
-    }
+        /* Caixa principal */
+        .container{
+            background: white; /* Fundo branco */
+            padding: 30px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra */
+            width: 300px; /* Largura fixa */
+            text-align: center; /* Centraliza o texto */
+        }
 
-    input{
-        width: 70%;
-        padding: 8px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+        /* Título */
+        h2{
+            margin-bottom: 20px; /* Espaço abaixo */
+        }
 
-    button{
-        padding: 7px 10px;
-        border: none;
-        background: #4facfe;
-        color: white;
-        border-radius: 3px;
-        cursor: pointer;
-        margin-left: 3px;
-    }
+        /* Campo de entrada */
+        input{
+            width: 70%; /* Ocupa 70% da largura */
+            padding: 8px; /* Espaçamento interno */
+            border-radius: 5px; /* Bordas arredondadas */
+            border: 1px solid #ccc; /* Borda cinza */
+        }
 
-    button:hover{
-        background: #2f8cff;
-    }
+        /* Botão */
+        button{
+            padding: 7px 10px;
+            border: none;
+            background: #4facfe; /* Cor azul */
+            color: white; /* Texto branco */
+            border-radius: 3px;
+            cursor: pointer; /* Cursor de clique */
+            margin-left: 3px;
+        }
 
-    ul{
-        margin-top: 20px;
-        text-align: left;
-    }
+        /* Efeito ao passar o mouse */
+        button:hover{
+            background: #2f8cff; /* Azul mais escuro */
+        }
 
-    li{
-        padding: 5px;
-        border-bottom: 1px solid #eee;
-    }
-</style>
+        /* Lista */
+        ul{
+            margin-top: 20px; /* Espaço acima */
+            text-align: left; /* Alinha itens à esquerda */
+        }
+
+        /* Cada item da lista */
+        li{
+            padding: 5px;
+            border-bottom: 1px solid #eee; /* Linha separadora */
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h2>Lista de Itens</h2>
+    <!-- Container principal -->
+    <div class="container">
 
-    <input type="text" id="itemInput" placeholder="Digite um item">
-    <button id="addBtn">Adicionar</button>
+        <!-- Título -->
+        <h2>Lista de Itens</h2>
 
-    <ul id="lista"></ul>
-</div>
+        <!-- Campo para digitar o item -->
+        <input type="text" id="itemInput" placeholder="Digite um item">
 
-<script src="script.js"></script>
+        <!-- Botão para adicionar item -->
+        <button id="addBtn">Adicionar</button>
+
+        <!-- Lista onde os itens serão adicionados dinamicamente -->
+        <ul id="lista"></ul>
+    </div>
+
+    
+    <script src="script.js"></script>
+
 </body>
 </html>
